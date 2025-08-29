@@ -29,47 +29,50 @@ def add(request ,x,y):
    return HttpResponse(x+y)
 
 def invoice(request):
-    if request.method== "POST":
-       phone_id = request.POST.get("phone_id")
-       full_name=request.POST.get("full_name");
-       phone=request.POST.get("phone");
-       email=request.POST.get("email");
-    print(full_name)
-    phone = [
-        {
-             "id":"0001",
-            "name": "iPhone 15",
-            "brand": "Apple",
-            "price": 4555,
-            "color": "black",
-            "image":"/images/iphone15.jpg"
-        },
-        {
-             "id":"0002",
-            "name": "Samsung Galaxy S23",
-            "brand": "Samsung",
-            "price": 3999,
-            "color": "blue",
-            "image":"/images/galaxy_s24.jpg"
-        },
-        {
-           "id":"0003",
-            "name": "Samsung Galaxy r23",
-            "brand": "Samsung",
-            "price": 3999,
-            "color": "blue",
-            "image":"/images/galaxy_s24.jpg"
-        }
-    ]
-        
-       #for loop
-    phones=[p for p in phone if str(p["id"]) == str(phone_id)]
-    return render(request,'invoice.html',{
-       "full_name": full_name ,
-       'phone' : phone ,
-       'email' :email ,
-       'product':phones
-    })
+    if request.method == "POST":
+        phone_id = request.POST.get("phone_id")
+        full_name = request.POST.get("full_name")
+        phone = request.POST.get("phone")
+        email = request.POST.get("email")
+
+        phones_list = [
+            {
+                "id": "0001",
+                "name": "iPhone 15",
+                "brand": "Apple",
+                "price": 4555,
+                "color": "black",
+                "image": "/images/iphone15.jpg"
+            },
+            {
+                "id": "0002",
+                "name": "Samsung Galaxy S23",
+                "brand": "Samsung",
+                "price": 3999,
+                "color": "blue",
+                "image": "/images/galaxy_s24.jpg"
+            },
+            {
+                "id": "0003",
+                "name": "Samsung Galaxy r23",
+                "brand": "Samsung",
+                "price": 3999,
+                "color": "blue",
+                "image": "/images/galaxy_s24.jpg"
+            }
+        ]
+
+        selected_product = [p for p in phones_list if str(p["id"]) == str(phone_id)]
+
+        return render(request, 'invoice.html', {
+            "full_name": full_name,
+            "phone": phone,
+            "email": email,
+            "product": selected_product
+        })
+
+    return HttpResponse("This page only supports POST method.", status=405)
+
     
 
 def runindex(request):
