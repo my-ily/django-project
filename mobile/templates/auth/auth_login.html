@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+           
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">تسجيل الدخول</h3>
+                </div>
+                <div class="card-body">
+                   <form method="post" action="{% url 'auth_login' %}">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">اسم المستخدم</label>
+                            <input type="text" name="username" id="username" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">كلمة المرور</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">دخول</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+<div class="row">
+    <div class="col">
+        <p>not have anaccount <a href="{% url 'auth_reg'%}">regester</a> </p>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

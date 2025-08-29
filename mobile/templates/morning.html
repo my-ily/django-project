@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{%block content %}
+
+<h1>morning , angle</h1>
+<ul>
+   {%for i in names %}
+   <li>{{i.name}}</li>
+
+</ul>
+{%endfor%}
+{% endblock%}
