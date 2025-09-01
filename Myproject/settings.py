@@ -17,8 +17,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'mobile',
     'django_bootstrap5',
+    'converter',
+    'cryptcon'
+
 ]
 
 MIDDLEWARE = [
@@ -64,6 +68,16 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'product',
+        'USER':'postgres',
+        'PASSWORD':'1234',
+        'PORT':'5432',
+        'HOST':'localhost'
+    }
+}
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True

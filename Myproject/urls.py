@@ -19,8 +19,8 @@ from django.urls import path
 from mobile import views
 from django.conf import settings
 from django.conf.urls.static import static
-
-
+from converter import views as p1
+from cryptcon import views as p2
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Welcome/',views.Welcome),
@@ -40,4 +40,7 @@ urlpatterns = [
       path('auth_login/', views.auth_login, name='auth_login'),
 
        path('auth_reg/',views.auth_reg,name='auth_reg'),
+       path('get_remote/',views.get_remote,name='get_remote'),
+       path('remoteProduct/',views.get_remoteProduct,name='get_remoteProduct'),
+       path('convert_currancy/',p1.convert_currancy,name='convert_currancy')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

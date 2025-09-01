@@ -7,6 +7,23 @@ from .models import Product ,Cart
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib.auth import authenticate , login
+import requests
+
+
+def get_remote(request):
+   url="https://fakestoreapi.com/products"
+   response = requests.get(url)
+   data=response.json()
+   print(data)
+   return JsonResponse(data ,safe=False)
+
+
+
+def get_remoteProduct(request):
+   url="https://fakestoreapi.com/products"
+   response = requests.get(url)
+   data=response.json()
+   return render(request , 'remoteProduct.html',{"data":data})
 # Create your views here.
 #backend
 def Welcome(request):
