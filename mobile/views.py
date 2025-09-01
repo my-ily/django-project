@@ -164,16 +164,21 @@ def add_to_cart(request):
     }
     return render(request,'details.html',context)
 
-from django.contrib.auth.decorators import login_required
 
-@login_required(login_url="/auth_login")
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+
+@login_required(login_url='auth_login')
 def Checkout(request):
-    print(f"User authenticated? {request.user.is_authenticated}")
-    cart = Cart.objects.select_related("product").all()
-    context = {
-        'cart': cart
+    cart=Cart.objects.select_related("product").all()
+   
+    context={
+        'cart':cart
     }
-    return render(request, 'Checkout.html', context)
+    
+    return render(request,'Checkout.html',context)
+
+
 
 
 
