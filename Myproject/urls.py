@@ -32,7 +32,7 @@ urlpatterns = [
   ,path('about/',views.about,name='about')
     ,path('blog/',views.blog,name='blog')
      ,path('phonemenu/',views.phonemenu,name='phonemenu')
-       ,path('morning/',views.morning),
+       ,
        path('invoice/',views.invoice,name="invoice"),
        path('details/',views.Datils,name="details"),
        path('add_to_cart/',views.add_to_cart,name='add_to_cart'),

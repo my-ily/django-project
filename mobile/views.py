@@ -135,20 +135,6 @@ def phonemenu(request):
   
 
 
-def morning(request):
-   names=[
-      {
-         "name":"ah",
-         "age":22 ,
-         "dream":"unlimit"
-      }
-   ]
-   context={
-      'names':names
-   }
-#    template=loader.get_template('morning.html')
-   return render(request,'morning.html',context)
-
 def Datils(request):
    id =request.GET.get("id")
    #استخدام الـ id للبحث في قاعدة البيانات
