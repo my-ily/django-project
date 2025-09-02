@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import requests
-from .models import ConversaionHistory  # تأكد من الاسم الصحيح
+from .models import ConversaionHistory 
 
 def convert_currancy(request):
     api_key = '135b44675282289494208c6e'
