@@ -11,9 +11,7 @@
       <div class="col-12 col-md-6 col-lg-4">
  
         <div class="card h-100 shadow-lg border-0 w-75">
-  
-<img src="{{ item.image }}">
-
+          <img src={{item.image.url}} class="card-img-top" alt="{{ item.name }}">
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="text-muted mb-1">{{ item.brand }}</p>

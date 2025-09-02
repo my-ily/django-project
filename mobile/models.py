@@ -16,7 +16,7 @@ class Product(models.Model):
       price= models.DecimalField(max_digits=10,decimal_places=6)
       color=models.CharField(max_length=100)
       brand=models.CharField(max_length=40)
-      image=models.ImageField(upload_to='mobile/')
+      image=models.ImageField(upload_to='mobile/static')
       storge = models.CharField(max_length=100)
       #تكامل مرجعي عند حذف البراند ابل مثلا راح ينمسح جميع منتجاتها
       #ربط المنتج اولا مع البراند لان المنتج يحتاج براند واحد
