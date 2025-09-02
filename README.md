@@ -1,4 +1,5 @@
 #  🧠 مشروع تطبيبقي في Django 
+<img width="2028" height="1639" alt="image" src="https://github.com/user-attachments/assets/4eebe04a-cbe5-4fa9-b9cf-13dd89862bf9" />
 
 ## 📌 نظرة عامة
 هذا المشروع مبني باستخدام إطار عمل **Django (النسخة 5+)** :
